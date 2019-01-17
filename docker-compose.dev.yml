@@ -1,0 +1,16 @@
+version: "3"
+
+networks:
+  museenet:
+    
+
+services:
+  musee:
+    build:
+      context: .
+    volumes:
+      - .:/home/mldev
+    ports:
+      - "8090:8888"
+    networks:
+      - museenet
