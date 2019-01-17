@@ -18,7 +18,8 @@ RUN pip install -U \
     numpy==1.14.0 \
     pandas==0.22.0 \
     scikit-learn==0.19.1 \
-    scipy==1.0.0
+    scipy==1.0.0 \
+    wikipedia-api==0.4.2
     
 
 
