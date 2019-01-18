@@ -5,23 +5,11 @@ FROM python:3.6-jessie
 ENV USER_UID ${LOCAL_UID:-1000}
 
 
-#RUN /usr/sbin/adduser -S -D -u ${USER_UID} mldev
+ADD requirements.txt /tmp/requirements.txt
 RUN /usr/sbin/adduser --system --uid ${USER_UID} mldev
 
 
-RUN pip install -U \
-    #ipython==6.2.1 \
-    beautifulsoup4==4.7.1 \
-    jupyter-client==5.2.2 \
-    jupyter-core==4.4.0 \
-    lxml==3.7.3 \
-    matplotlib==2.1.2 \
-    notebook==5.3.1 \
-    numpy==1.14.0 \
-    pandas==0.22.0 \
-    scikit-learn==0.19.1 \
-    scipy==1.0.0
-    #wikipedia-api==0.4.2
+RUN pip install -r /tmp/requirements.txt
     
 
 
