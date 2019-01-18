@@ -2,6 +2,27 @@
 
 
 
+## Thoughts
+
+
+### Ideal data source
+
+Museum visitors postcode information per year
+
+
+### Museums cities classification
+
+
+### Tourists data per city
+
+- International visitors
+- Domestic visitors
+
+### Cities population
+
+Assumption:
+
+City population and age distribution are relative stable during short term of period.
 
 ## Data sources
 
