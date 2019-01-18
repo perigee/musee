@@ -3,6 +3,19 @@
 
 
 
+## Data sources
+
+### Museum index
+
+- https://www.aecom.com/theme-index/
+
+### Cities population
+
+
+
+### Cities tourists index
+
+- https://newsroom.mastercard.com/wp-content/uploads/2017/10/Mastercard-Destination-Cities-Index-Deck.pdf
 
 
 ## References
