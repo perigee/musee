@@ -5,6 +5,7 @@ import pandas as pd
 
 
 TABLE_NB_COLUMN = 4
+POPULATION_FILENAME = 'population.csv'
 
 
 def getRaw():
@@ -16,13 +17,21 @@ def getRaw():
         return resp.content
 
 
+def readPopulation(filename):
+    return pd.read_csv(filename, header=0)
+
+
+def formatterCity(txt):
+    txt = txt.replace(',','')
+    return txt.lower()
+
 def extractRow(inData):
     tabs = inData.find_all('td')
     if len(tabs) != TABLE_NB_COLUMN:
         return None
 
     museum = tabs[0].find('a').text
-    city = tabs[1].find_all('a')[1].text
+    city = formatterCity(tabs[1].find_all('a')[1].text)
     visitors = tabs[2].text
     year = tabs[3].text[0:4]
 
@@ -30,7 +39,8 @@ def extractRow(inData):
 
 
 def extractTable(rawdata):
-    titles = ['museum', 'city', 'visitors', 'year']
+    col_title = ['museum', 'city', 'visitors', 'year']
+    museums = pd.DataFrame(columns=col_title)
     page = BeautifulSoup(rawdata, 'lxml')
     table = page.find('table', class_='wikitable sortable')
     mhead = table.find('thead')
@@ -40,4 +50,12 @@ def extractTable(rawdata):
         if not datarow:
             continue
 
+        museums.loc[len(museums)] = datarow
         print(datarow)
+    
+    return museums
+
+if __name__ == "__main__":
+    museums = extractTable(getRaw())
+    population = readPopulation(POPULATION_FILENAME)
+    datasource = pd.merge(museums, population, on='city')
