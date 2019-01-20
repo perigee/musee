@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 
 TABLE_NB_COLUMN = 4
 
+
 def getRaw():
     wiki_url = 'https://en.wikipedia.org/wiki/List_of_most_visited_museums'
     with requests.get(wiki_url) as resp:
@@ -24,18 +25,18 @@ def extractRow(inData):
     visitors = tabs[2].text
     year = tabs[3].text[0:4]
 
-    return '::'.join([museum, city, visitors, year])
+    return [museum, city, visitors, year]
 
-    
+
 def extractTable(rawdata):
-        page = BeautifulSoup(rawdata, 'lxml')
-        table = page.find('table', class_='wikitable sortable')
-        mhead = table.find('thead')
-        mbody = table.find('tbody')
-        for row in mbody.find_all('tr'):
-            datarow = extractRow(row)
-            if not datarow:
-                continue
+    titles = ['museum', 'city', 'visitors', 'year']
+    page = BeautifulSoup(rawdata, 'lxml')
+    table = page.find('table', class_='wikitable sortable')
+    mhead = table.find('thead')
+    mbody = table.find('tbody')
+    for row in mbody.find_all('tr'):
+        datarow = extractRow(row)
+        if not datarow:
+            continue
 
-            print(datarow)
-                
+        print(datarow)
