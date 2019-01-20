@@ -18,12 +18,16 @@ def getRaw():
 
 
 def readPopulation(filename):
-    return pd.read_csv(filename, header=0)
+    data = pd.read_csv(filename, header=0)
+    return data
 
 
 def formatterCity(txt):
     txt = txt.replace(',','')
     return txt.lower()
+
+def formatterNumber(txt):
+    return int(txt.replace(',',''))/1000000.0
 
 def extractRow(inData):
     tabs = inData.find_all('td')
@@ -32,7 +36,7 @@ def extractRow(inData):
 
     museum = tabs[0].find('a').text
     city = formatterCity(tabs[1].find_all('a')[1].text)
-    visitors = tabs[2].text
+    visitors = formatterNumber(tabs[2].text)
     year = tabs[3].text[0:4]
 
     return [museum, city, visitors, year]

@@ -1,29 +1,29 @@
-city, population
-shanghai, 24.8
-melbourne, 4.82
-beijing, 21.71
-gansu, 2.4
-hangzhou, 7.27
-chongqing, 14.3
-nanjing, 8.33
-xi'an, 4.8
-paris, 10.84
-florence, 0.7
-tokyo, 37.34
-mexico city, 21.5
-amsterdam, 1.12
-oświęcim, 0.04
-moscow, 12.4
-saint petersburg, 5.32
-seoul, 9.77
-madrid, 6.5
-kaohsiung, 2.77
-taipei, 2.67
-konye, 2.16
-edinburgh, 0.52
-london, 8.82
-houston, 2.31
-los angeles, 3.99
-new york, 23.87
-washington d.c., 0.7
-vantican city, 0.001
+city,population
+shanghai,24.8
+melbourne,4.82
+beijing,21.71
+gansu,2.4
+hangzhou,7.27
+chongqing,14.3
+nanjing,8.33
+xi'an,4.8
+paris,10.84
+florence,0.7
+tokyo,37.34
+mexico city,21.5
+amsterdam,1.12
+oświęcim,0.04
+moscow,12.4
+saint petersburg,5.32
+seoul,9.77
+madrid,6.5
+kaohsiung,2.77
+taipei,2.67
+konya,2.16
+edinburgh,0.52
+london,8.82
+houston,2.31
+los angeles,3.99
+new york city,23.87
+washington d.c.,0.7
+vatican city,0.001
