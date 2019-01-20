@@ -13,6 +13,13 @@ Museum visitors postcode information per year
 ### Museums cities classification
 
 
+### Cities classification
+
+Ratio: visitors / population
+Raito: international visitors / population
+
+
+
 ### Tourists data per city
 
 - International visitors
