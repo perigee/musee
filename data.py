@@ -1,6 +1,7 @@
 import requests
 import lxml
 from bs4 import BeautifulSoup
+import pandas as pd
 
 
 TABLE_NB_COLUMN = 4
