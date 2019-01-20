@@ -51,11 +51,12 @@ def extractTable(rawdata):
             continue
 
         museums.loc[len(museums)] = datarow
-        print(datarow)
     
     return museums
 
-if __name__ == "__main__":
+
+def getDatasource():
     museums = extractTable(getRaw())
     population = readPopulation(POPULATION_FILENAME)
     datasource = pd.merge(museums, population, on='city')
+    return datasource
