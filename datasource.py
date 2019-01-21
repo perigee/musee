@@ -6,6 +6,7 @@ import pandas as pd
 
 TABLE_NB_COLUMN = 4
 POPULATION_FILENAME = 'population.csv'
+DOMAIN_FILENAME = 'domains.csv'
 
 
 def getRaw():
@@ -17,7 +18,7 @@ def getRaw():
         return resp.content
 
 
-def readPopulation(filename):
+def readCSV(filename):
     data = pd.read_csv(filename, header=0)
     return data
 
@@ -61,6 +62,8 @@ def extractTable(rawdata):
 
 def getDatasource():
     museums = extractTable(getRaw())
-    population = readPopulation(POPULATION_FILENAME)
+    population = readCSV(POPULATION_FILENAME)
+    domain = readCSV(DOMAIN_FILENAME)
     datasource = pd.merge(museums, population, on='city')
+    datasource = pd.merge(datasource, domain, on='museum')
     return datasource
