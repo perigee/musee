@@ -31,6 +31,10 @@ Assumption:
 
 City population and age distribution are relative stable during short term of period.
 
+
+- [World cities population] http://worldpopulationreview.com/us-cities/new-york-city-population/
+
+
 ## Data sources
 
 ### Museum index
