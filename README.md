@@ -30,8 +30,8 @@ clean up the local environment afterward.
 
 Hypothesis:
 
-1. If the cities population are correlated with the number of visitors of museums
-2. If the cities' international tourists are correlated with the number of visitors of museums
+1. Whether the cities population are correlated with the number of visitors of museums
+2. Whether the cities' international tourists are correlated with the number of visitors of museums
 
 
 ## References
